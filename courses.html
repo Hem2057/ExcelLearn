@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - ExcelLearn</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/courses.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__container container">
+            <a href="index.html" class="header__logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>ExcelLearn</span>
+            </a>
+            
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li><a href="index.html" class="header__nav-link">Home</a></li>
+                    <li><a href="#" class="header__nav-link">Courses</a></li>
+                    <li><a href="#" class="header__nav-link">Features</a></li>
+                    <li><a href="#" class="header__nav-link">Testimonials</a></li>
+                    <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header__buttons">
+                <button class="btn btn--outline">Login</button>
+                <button class="btn btn--gradient">Sign Up</button>
+            </div>
+
+            <button class="header__mobile-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Course Header -->
+    <section class="course-header">
+        <div class="container">
+            <h1 class="course-header__title">Browse Our Courses</h1>
+            <p class="course-header__text">Discover world-class courses designed by industry experts to help you master the skills you need.</p>
+        </div>
+    </section>
+
+    <!-- Course Filters -->
+    <section class="container">
+        <div class="course-filters">
+            <button class="filter-btn active" data-category="all">All Courses</button>
+            <button class="filter-btn" data-category="beginner">Beginner</button>
+            <button class="filter-btn" data-category="intermediate">Intermediate</button>
+            <button class="filter-btn" data-category="advanced">Advanced</button>
+        </div>
+    </section>
+
+    <!-- Course Grid -->
+    <section class="container">
+        <div class="course-grid">
+            <!-- Full Stack Development -->
+            <div class="course-card" data-category="intermediate">
+                <div class="course-card__image">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" alt="Full Stack Development">
+                    <div class="course-card__image-overlay"></div>
+                    <button class="course-card__play-btn" data-video="https://www.youtube.com/embed/W6NZfCO5SIk">
+                        <i class="fas fa-play"></i>
+                    </button>
+                </div>
+
+                <div class="course-card__content">
+                    <div class="course-card__tags">
+                        <span class="course-card__tag course-card__tag--intermediate">Intermediate</span>
+                        <span class="course-card__tag course-card__tag--duration">12 Weeks</span>
+                    </div>
+
+                    <h3 class="course-card__title">Full Stack Development</h3>
+                    <p class="course-card__description">Master both frontend and backend technologies to build complete web applications.</p>
+
+                    <div class="course-card__instructor">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Smith" class="course-card__instructor-image">
+                        <span class="course-card__instructor-name">John Smith</span>
+                    </div>
+
+                    <!-- Tabs -->
+                    <div class="course-tabs">
+                        <div class="course-tabs__buttons">
+                            <button class="course-tabs__button active" data-tab="syllabus1">Syllabus</button>
+                            <button class="course-tabs__button" data-tab="outcomes1">Outcomes</button>
+                            <button class="course-tabs__button" data-tab="certification1">Certification</button>
+                        </div>
+
+                        <div class="course-tabs__content active" id="syllabus1">
+                            <ul class="course-tabs__list">
+                                <li>HTML, CSS, and JavaScript Fundamentals</li>
+                                <li>React.js and Modern Frontend Development</li>
+                                <li>Node.js and Express Backend Development</li>
+                                <li>Database Design and Implementation</li>
+                            </ul>
+                        </div>
+
+                        <div class="course-tabs__content" id="outcomes1">
+                            <ul class="course-tabs__list">
+                                <li>Build full-stack web applications</li>
+                                <li>Implement secure user authentication</li>
+                                <li>Deploy applications to production</li>
+                            </ul>
+                        </div>
+
+                        <div class="course-tabs__content" id="certification1">
+                            <p>Earn a Full Stack Developer certification upon course completion.</p>
+                        </div>
+                    </div>
+
+                    <div class="course-card__footer">
+                        <span class="course-card__price">$499</span>
+                        <div class="course-card__actions">
+                            <button class="btn btn--outline quiz-btn" data-course="fullstack" data-questions='[
+                                {"q": "What is the primary purpose of Node.js?", "options": ["Frontend development", "Backend JavaScript runtime", "Database management", "UI design"], "correct": 1},
+                                {"q": "Which of these is NOT a React hook?", "options": ["useState", "useEffect", "useLayout", "useComponent"], "correct": 3},
+                                {"q": "What does API stand for?", "options": ["Application Programming Interface", "Advanced Programming Integration", "Application Process Integration", "Advanced Protocol Interface"], "correct": 0}
+                            ]'>Take Quiz</button>
+                            <button class="btn btn--gradient">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI & Machine Learning -->
+            <div class="course-card" data-category="advanced">
+                <div class="course-card__image">
+                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e" alt="AI & Machine Learning">
+                    <div class="course-card__image-overlay"></div>
+                    <button class="course-card__play-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                </div>
+
+                <div class="course-card__content">
+                    <div class="course-card__tags">
+                        <span class="course-card__tag course-card__tag--advanced">Advanced</span>
+                        <span class="course-card__tag course-card__tag--duration">16 Weeks</span>
+                    </div>
+
+                    <h3 class="course-card__title">AI & Machine Learning</h3>
+                    <p class="course-card__description">Build intelligent systems and predictive models with Python and TensorFlow.</p>
+
+                    <div class="course-card__instructor">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Chen" class="course-card__instructor-image">
+                        <span class="course-card__instructor-name">Sarah Chen</span>
+                    </div>
+
+                    <!-- Tabs -->
+                    <div class="course-tabs">
+                        <div class="course-tabs__buttons">
+                            <button class="course-tabs__button active" data-tab="syllabus2">Syllabus</button>
+                            <button class="course-tabs__button" data-tab="outcomes2">Outcomes</button>
+                            <button class="course-tabs__button" data-tab="certification2">Certification</button>
+                        </div>
+
+                        <div class="course-tabs__content active" id="syllabus2">
+                            <ul class="course-tabs__list">
+                                <li>Python for Data Science</li>
+                                <li>Neural Networks & Deep Learning</li>
+                                <li>Computer Vision & NLP</li>
+                                <li>Model Deployment</li>
+                            </ul>
+                        </div>
+
+                        <div class="course-tabs__content" id="outcomes2">
+                            <ul class="course-tabs__list">
+                                <li>Build AI models from scratch</li>
+                                <li>Implement deep learning solutions</li>
+                                <li>Deploy models to production</li>
+                            </ul>
+                        </div>
+
+                        <div class="course-tabs__content" id="certification2">
+                            <p>Earn an AI & Machine Learning certification upon course completion.</p>
+                        </div>
+                    </div>
+
+                    <div class="course-card__footer">
+                        <span class="course-card__price">$699</span>
+                        <div class="course-card__actions">
+                            <button class="btn btn--outline quiz-btn" data-course="ai" data-questions='[
+                                {"q": "What is a neural network?", "options": ["A computer network", "A biological network", "A mathematical model inspired by biological neural networks", "A social network"], "correct": 2},
+                                {"q": "Which of these is NOT a type of machine learning?", "options": ["Supervised Learning", "Unsupervised Learning", "Reinforcement Learning", "Mechanical Learning"], "correct": 3},
+                                {"q": "What is TensorFlow?", "options": ["A database", "A machine learning framework", "A programming language", "A cloud service"], "correct": 1}
+                            ]'>Take Quiz</button>
+                            <button class="btn btn--gradient">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Science -->
+            <div class="course-card" data-category="beginner">
+                <div class="course-card__image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="Data Science">
+                    <div class="course-card__image-overlay"></div>
+                    <button class="course-card__play-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                </div>
+
+                <div class="course-card__content">
+                    <div class="course-card__tags">
+                        <span class="course-card__tag course-card__tag--beginner">Beginner</span>
+                        <span class="course-card__tag course-card__tag--duration">14 Weeks</span>
+                    </div>
+
+                    <h3 class="course-card__title">Data Science Fundamentals</h3>
+                    <p class="course-card__description">Learn to analyze data and derive meaningful insights using statistical methods.</p>
+
+                    <div class="course-card__instructor">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael Rodriguez" class="course-card__instructor-image">
+                        <span class="course-card__instructor-name">Michael Rodriguez</span>
+                    </div>
+
+                    <!-- Tabs -->
+                    <div class="course-tabs">
+                        <div class="course-tabs__buttons">
+                            <button class="course-tabs__button active" data-tab="syllabus3">Syllabus</button>
+                            <button class="course-tabs__button" data-tab="outcomes3">Outcomes</button>
+                            <button class="course-tabs__button" data-tab="certification3">Certification</button>
+                        </div>
+
+                        <div class="course-tabs__content active" id="syllabus3">
+                            <ul class="course-tabs__list">
+                                <li>Data Analysis with Python</li>
+                                <li>Statistical Methods</li>
+                                <li>Data Visualization</li>
+                                <li>Machine Learning Basics</li>
+                            </ul>
+                        </div>
+
+                        <div class="course-tabs__content" id="outcomes3">
+                            <ul class="course-tabs__list">
+                                <li>Analyze complex datasets</li>
+                                <li>Create data visualizations</li>
+                                <li>Build predictive models</li>
+                            </ul>
+                        </div>
+
+                        <div class="course-tabs__content" id="certification3">
+                            <p>Earn a Data Science certification upon course completion.</p>
+                        </div>
+                    </div>
+
+                    <div class="course-card__footer">
+                        <span class="course-card__price">$599</span>
+                        <div class="course-card__actions">
+                            <button class="btn btn--outline quiz-btn" data-course="datascience" data-questions='[
+                                {"q": "What is the purpose of data normalization?", "options": ["To make data bigger", "To standardize data within a range", "To delete data", "To duplicate data"], "correct": 1},
+                                {"q": "Which visualization is best for showing distribution?", "options": ["Pie Chart", "Histogram", "Line Graph", "Bar Chart"], "correct": 1},
+                                {"q": "What does SQL stand for?", "options": ["Structured Query Language", "Simple Query Language", "Standard Query Logic", "System Query Language"], "correct": 0}
+                            ]'>Take Quiz</button>
+                            <button class="btn btn--gradient">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Paths Section -->
+    <section class="career-paths">
+        <div class="container">
+            <div class="career-paths__header">
+                <h2 class="career-paths__title">Career Paths</h2>
+                <p class="career-paths__text">Choose your path and build a successful career in tech</p>
+            </div>
+
+            <div class="career-paths__grid">
+                <!-- Web Development Path -->
+                <div class="career-path-card">
+                    <div class="career-path-card__icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="career-path-card__title">Web Development</h3>
+                    <p class="career-path-card__description">Build modern, responsive websites and web applications.</p>
+                    <div class="career-path-card__stats">
+                        <span>Job Growth: 15%</span>
+                        <span>Avg Salary: $75k</span>
+                    </div>
+                </div>
+
+                <!-- AI & ML Path -->
+                <div class="career-path-card">
+                    <div class="career-path-card__icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="career-path-card__title">AI & Machine Learning</h3>
+                    <p class="career-path-card__description">Develop intelligent systems and predictive models.</p>
+                    <div class="career-path-card__stats">
+                        <span>Job Growth: 20%</span>
+                        <span>Avg Salary: $95k</span>
+                    </div>
+                </div>
+
+                <!-- Data Science Path -->
+                <div class="career-path-card">
+                    <div class="career-path-card__icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 class="career-path-card__title">Data Science</h3>
+                    <p class="career-path-card__description">Analyze and interpret complex data to drive decisions.</p>
+                    <div class="career-path-card__stats">
+                        <span>Job Growth: 18%</span>
+                        <span>Avg Salary: $85k</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <h3 class="footer__brand">
+                        <i class="fas fa-graduation-cap"></i>
+                        ExcelLearn
+                    </h3>
+                    <p class="footer__text">The future of education is here. Learn smarter, not harder.</p>
+                </div>
+                
+                <div class="footer__column">
+                    <h4 class="footer__title">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="#">Home</a></li>
+                        <li class="footer__link"><a href="#">Courses</a></li>
+                        <li class="footer__link"><a href="#">About Us</a></li>
+                        <li class="footer__link"><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h4 class="footer__title">Contact</h4>
+                    <div class="footer__contact">
+                        <p class="footer__contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            123 Tech Park, Silicon Valley
+                        </p>
+                        <p class="footer__contact-item">
+                            <i class="fas fa-envelope"></i>
+                            hello@excellearn.com
+                        </p>
+                        <p class="footer__contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            +1 (555) 123-4567
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="footer__column">
+                    <h4 class="footer__title">Newsletter</h4>
+                    <p class="footer__text">Subscribe to get updates on new courses and features.</p>
+                    <div class="footer__newsletter-form">
+                        <input type="email" placeholder="Your Email" class="footer__newsletter-input">
+                        <button class="footer__newsletter-button">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2023 ExcelLearn. All rights reserved.</p>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="footer__social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="footer__social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="footer__social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quiz Modal -->
+    <div class="quiz-modal" id="quiz-modal">
+        <div class="quiz-modal__content">
+            <button class="quiz-modal__close" id="close-quiz-modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="quiz-modal__body">
+                <h3 class="quiz-modal__title" id="quiz-title">Course Quiz</h3>
+                <div id="quiz-content">
+                    <!-- Questions will be dynamically inserted here -->
+                </div>
+                <div class="quiz-modal__footer">
+                    <div class="quiz-modal__progress" id="quiz-progress">Question 1 of 3</div>
+                    <button id="quiz-next-btn" class="btn btn--gradient">Next Question</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="video-modal">
+        <div class="video-modal__content">
+            <button class="video-modal__close" id="close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="video-modal__body">
+                <iframe class="video-modal__iframe" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>

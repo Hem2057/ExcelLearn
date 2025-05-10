@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExcelLearn | Next-Gen Learning</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__container container">
+            <a href="#" class="header__logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>ExcelLearn</span>
+            </a>
+            
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li><a href="#" class="header__nav-link">Home</a></li>
+                    <li><a href="courses.html" class="header__nav-link">Courses</a></li>
+                    <li><a href="#" class="header__nav-link">Features</a></li>
+                    <li><a href="#" class="header__nav-link">Testimonials</a></li>
+                    <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header__buttons">
+                <button class="btn btn--outline">Login</button>
+                <button class="btn btn--gradient">Sign Up</button>
+            </div>
+
+            <button class="header__mobile-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero__container container">
+            <div class="hero__content">
+                <h1 class="hero__title">Transform Your Future With Immersive Learning</h1>
+                <p class="hero__text">Experience education reimagined with our cutting-edge platform that combines AI-powered learning with human mentorship for unparalleled results.</p>
+                <div class="hero__buttons">
+                    <button class="btn btn--gradient">Explore Courses</button>
+                    <button class="btn btn--outline">
+                        <i class="fas fa-play"></i> Watch Demo
+                    </button>
+                </div>
+            </div>
+            <div class="hero__image animate-float">
+                <svg class="w-full" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                    <!-- SVG content remains unchanged -->
+                    <circle cx="500" cy="150" r="100" fill="#6C63FF" opacity="0.1"/>
+                    <circle cx="150" cy="250" r="80" fill="#FF6584" opacity="0.1"/>
+                    <g transform="translate(100, 50)">
+                        <rect x="150" y="100" width="200" height="150" rx="10" fill="#6C63FF"/>
+                        <rect x="160" y="110" width="180" height="120" rx="5" fill="white"/>
+                        <text x="180" y="150" fill="#6C63FF" font-family="monospace" font-size="14">
+                            <tspan x="180" dy="0"></></tspan>
+                            <tspan x="180" dy="20">{ }</tspan>
+                            <tspan x="180" dy="20"></></tspan>
+                        </text>
+                        <circle cx="250" cy="50" r="30" fill="#6C63FF"/>
+                        <path d="M220 90 Q250 120 280 90" stroke="#6C63FF" fill="none" stroke-width="8"/>
+                        <g class="animate-bounce">
+                            <circle cx="150" cy="70" r="10" fill="#FF6584"/>
+                            <circle cx="350" cy="70" r="10" fill="#FF6584"/>
+                            <circle cx="250" cy="270" r="10" fill="#FF6584"/>
+                        </g>
+                    </g>
+                    <path d="M50,200 Q150,150 250,200 T450,200" stroke="#6C63FF" fill="none" stroke-width="2" opacity="0.5"/>
+                    <path d="M100,300 Q200,250 300,300 T500,300" stroke="#FF6584" fill="none" stroke-width="2" opacity="0.5"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Background Blobs -->
+        <div class="blob blob--primary animate-blob"></div>
+        <div class="blob blob--secondary animate-blob animation-delay-2000"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features__header">
+                <h2 class="features__title">Why ExcelLearn Stands Out</h2>
+                <p class="features__text">We've redefined online education with innovative features that make learning engaging, effective, and enjoyable.</p>
+            </div>
+            
+            <div class="features__grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="feature-card__title">AI-Powered Learning</h3>
+                    <p class="feature-card__text">Our adaptive learning algorithms personalize content to match your pace and learning style.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-vr-cardboard"></i>
+                    </div>
+                    <h3 class="feature-card__title">Immersive Labs</h3>
+                    <p class="feature-card__text">Practice in realistic virtual environments with our VR and AR enabled labs.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-card__title">Real-Time Analytics</h3>
+                    <p class="feature-card__text">Track your progress with detailed analytics and personalized recommendations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats__grid">
+                <div class="stats__item">
+                    <div class="stats__item-number">10,000+</div>
+                    <p class="stats__item-label">Students Enrolled</p>
+                </div>
+                <div class="stats__item">
+                    <div class="stats__item-number">98%</div>
+                    <p class="stats__item-label">Satisfaction Rate</p>
+                </div>
+                <div class="stats__item">
+                    <div class="stats__item-number">500+</div>
+                    <p class="stats__item-label">Hours of Content</p>
+                </div>
+                <div class="stats__item">
+                    <div class="stats__item-number">50+</div>
+                    <p class="stats__item-label">Industry Experts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <h3 class="footer__brand">
+                        <i class="fas fa-graduation-cap"></i>
+                        ExcelLearn
+                    </h3>
+                    <p class="footer__text">The future of education is here. Learn smarter, not harder.</p>
+                </div>
+                
+                <div class="footer__column">
+                    <h4 class="footer__title">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="#">Home</a></li>
+                        <li class="footer__link"><a href="#">Courses</a></li>
+                        <li class="footer__link"><a href="#">About Us</a></li>
+                        <li class="footer__link"><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h4 class="footer__title">Contact</h4>
+                    <div class="footer__contact">
+                        <p class="footer__contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            123 Tech Park, Silicon Valley
+                        </p>
+                        <p class="footer__contact-item">
+                            <i class="fas fa-envelope"></i>
+                            hello@excellearn.com
+                        </p>
+                        <p class="footer__contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            +1 (555) 123-4567
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="footer__column">
+                    <h4 class="footer__title">Newsletter</h4>
+                    <p class="footer__text">Subscribe to get updates on new courses and features.</p>
+                    <div class="footer__newsletter-form">
+                        <input type="email" placeholder="Your Email" class="footer__newsletter-input">
+                        <button class="footer__newsletter-button">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2023 ExcelLearn. All rights reserved.</p>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="footer__social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="footer__social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="footer__social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Button -->
+    <div class="chat-button animate-bounce">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
