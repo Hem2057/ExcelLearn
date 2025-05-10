@@ -8,7 +8,7 @@ To set up the ExcelLearn project locally, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/excellearn.git
+   git clone https://github.com/Hem2057/excellearn.git
    cd excellearn
    ```
 
@@ -123,5 +123,4 @@ The project uses the following libraries:
 ## Contributing
 Contributions to improve ExcelLearn are welcome! If you have suggestions for new features or enhancements, feel free to open an issue or submit a pull request.
 
-## License
-This project is licensed under the [MIT License](LICENSE).
+
