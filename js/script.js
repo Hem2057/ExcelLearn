@@ -3,17 +3,13 @@ let currentQuiz = null;
 let currentQuestion = 0;
 let score = 0;
 
-console.log('Script loaded');
 const quizButtons = document.querySelectorAll('.quiz-btn');
-console.log('Quiz buttons found:', quizButtons.length);
 
 quizButtons.forEach(button => {
     button.addEventListener('click', () => {
-        console.log('Quiz button clicked');
         try {
             const questions = JSON.parse(button.getAttribute('data-questions'));
             const course = button.getAttribute('data-course');
-            console.log('Quiz data:', { course, questions });
             startQuiz(questions, course);
         } catch (error) {
             console.error('Error starting quiz:', error);
@@ -22,7 +18,6 @@ quizButtons.forEach(button => {
 });
 
 function startQuiz(questions, course) {
-    console.log('Starting quiz for course:', course);
     currentQuiz = questions;
     currentQuestion = 0;
     score = 0;
@@ -37,9 +32,7 @@ function startQuiz(questions, course) {
     
     showQuestion();
     const modal = document.getElementById('quiz-modal');
-    console.log('Quiz modal element:', modal);
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
+    modal.classList.add('active');
 }
 
 function showQuestion() {
@@ -56,15 +49,15 @@ function showQuestion() {
     
     // Create question HTML
     let html = `
-        <div class="mb-6">
-            <h4 class="text-lg font-semibold mb-4">${question.q}</h4>
-            <div class="space-y-3">
+        <div class="quiz-question">
+            <h4 class="quiz-question__title">${question.q}</h4>
+            <div class="quiz-options">
     `;
     
     question.options.forEach((option, index) => {
         html += `
-            <label class="flex items-center p-4 rounded-xl border border-gray-200 hover:border-primary cursor-pointer transition-colors">
-                <input type="radio" name="answer" value="${index}" class="mr-3">
+            <label class="quiz-option">
+                <input type="radio" name="answer" value="${index}">
                 <span>${option}</span>
             </label>
         `;
@@ -94,14 +87,22 @@ document.getElementById('quiz-next-btn').addEventListener('click', () => {
     } else {
         // Show results
         const percentage = Math.round((score / currentQuiz.length) * 100);
+        const isPassing = percentage >= 70;
+        
         document.getElementById('quiz-content').innerHTML = `
-            <div class="text-center">
-                <div class="text-6xl font-bold mb-4 ${percentage >= 70 ? 'text-green-500' : 'text-red-500'}">${percentage}%</div>
-                <p class="text-xl mb-6">You got ${score} out of ${currentQuiz.length} questions correct!</p>
-                ${percentage >= 70 ? 
-                    `<div class="text-green-500 mb-6"><i class="fas fa-check-circle text-4xl"></i><p class="mt-2">Congratulations! You passed the quiz!</p></div>` :
-                    `<div class="text-red-500 mb-6"><i class="fas fa-times-circle text-4xl"></i><p class="mt-2">Keep learning and try again!</p></div>`
-                }
+            <div class="quiz-results">
+                <div class="quiz-results__score ${isPassing ? 'quiz-results__score--pass' : 'quiz-results__score--fail'}">
+                    ${percentage}%
+                </div>
+                <p class="quiz-results__message">
+                    You got ${score} out of ${currentQuiz.length} questions correct!
+                </p>
+                <div class="quiz-results__icon ${isPassing ? 'quiz-results__icon--pass' : 'quiz-results__icon--fail'}">
+                    <i class="fas ${isPassing ? 'fa-check-circle' : 'fa-times-circle'}"></i>
+                </div>
+                <p class="quiz-results__message">
+                    ${isPassing ? 'Congratulations! You passed the quiz!' : 'Keep learning and try again!'}
+                </p>
             </div>
         `;
         document.getElementById('quiz-next-btn').textContent = 'Close Quiz';
@@ -111,8 +112,7 @@ document.getElementById('quiz-next-btn').addEventListener('click', () => {
 
 function closeQuizModal() {
     const modal = document.getElementById('quiz-modal');
-    modal.classList.remove('flex');
-    modal.classList.add('hidden');
+    modal.classList.remove('active');
 }
 
 document.getElementById('close-quiz-modal').addEventListener('click', closeQuizModal);
@@ -131,12 +131,16 @@ document.querySelectorAll('.tab-btn').forEach(button => {
         const container = button.closest('div').parentElement;
         
         // Remove active class from all buttons and contents
-        container.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('bg-primary/10', 'text-primary'));
-        container.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
+        container.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        container.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.remove('active');
+        });
         
         // Add active class to clicked button and corresponding content
-        button.classList.add('bg-primary/10', 'text-primary');
-        container.querySelector(`#${tabId}`).classList.remove('hidden');
+        button.classList.add('active');
+        container.querySelector(`#${tabId}`).classList.add('active');
     });
 });
 
@@ -149,12 +153,8 @@ filterBtns.forEach(btn => {
         const category = btn.getAttribute('data-category');
         
         // Update active button
-        filterBtns.forEach(b => {
-            b.classList.remove('bg-primary', 'text-white');
-            b.classList.add('bg-white', 'text-dark');
-        });
-        btn.classList.remove('bg-white', 'text-dark');
-        btn.classList.add('bg-primary', 'text-white');
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
         
         // Filter courses
         courseCards.forEach(card => {
@@ -176,21 +176,18 @@ document.querySelectorAll('[data-video]').forEach(button => {
     button.addEventListener('click', () => {
         const videoUrl = button.getAttribute('data-video');
         videoFrame.src = videoUrl;
-        videoModal.classList.remove('hidden');
-        videoModal.classList.add('flex');
+        videoModal.classList.add('active');
     });
 });
 
 closeVideoBtn.addEventListener('click', () => {
-    videoModal.classList.remove('flex');
-    videoModal.classList.add('hidden');
+    videoModal.classList.remove('active');
     videoFrame.src = '';
 });
 
 videoModal.addEventListener('click', (e) => {
     if (e.target === videoModal) {
-        videoModal.classList.remove('flex');
-        videoModal.classList.add('hidden');
+        videoModal.classList.remove('active');
         videoFrame.src = '';
     }
 });
